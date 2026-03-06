@@ -99,19 +99,21 @@ export async function updateSettings(
 
     if (existingSettings) {
       // Update existing settings
+      const updateData: Partial<FirmSettings> = {
+        firm_name: data.firm_name,
+        address: data.address,
+        phone: data.phone,
+        email: data.email,
+        social_links: data.social_links || {},
+        updated_at: new Date().toISOString(),
+      };
+
       const { data: updatedSettings, error } = await supabase
         .from('settings')
-        .update({
-          firm_name: data.firm_name,
-          address: data.address,
-          phone: data.phone,
-          email: data.email,
-          social_links: data.social_links || {},
-          updated_at: new Date().toISOString(),
-        })
+        .update(updateData)
         .eq('id', existingSettings.id)
         .select()
-        .single();
+        .single<FirmSettings>();
 
       if (error) {
         console.error('Error updating settings:', error);
@@ -121,17 +123,19 @@ export async function updateSettings(
       settings = updatedSettings;
     } else {
       // Create new settings
+      const insertData = {
+        firm_name: data.firm_name,
+        address: data.address,
+        phone: data.phone,
+        email: data.email,
+        social_links: data.social_links || {},
+      };
+
       const { data: newSettings, error } = await supabase
         .from('settings')
-        .insert({
-          firm_name: data.firm_name,
-          address: data.address,
-          phone: data.phone,
-          email: data.email,
-          social_links: data.social_links || {},
-        })
+        .insert(insertData)
         .select()
-        .single();
+        .single<FirmSettings>();
 
       if (error) {
         console.error('Error creating settings:', error);
