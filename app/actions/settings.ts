@@ -1,7 +1,7 @@
 'use server';
 
 import { createClient } from '@/lib/supabase/server';
-import { FirmSettings, SocialLinks } from '@/lib/types/database';
+import { FirmSettings, SocialLinks, Profile } from '@/lib/types/database';
 import { revalidatePath } from 'next/cache';
 
 export interface UpdateSettingsData {
@@ -79,13 +79,13 @@ export async function updateSettings(
     }
 
     // Check if user is admin
-    const { data: profile } = await supabase
+    const { data: profile, error: profileError } = await supabase
       .from('profiles')
       .select('role')
       .eq('id', user.id)
-      .single();
+      .single<Pick<Profile, 'role'>>();
 
-    if (!profile || profile.role !== 'admin') {
+    if (profileError || !profile || profile.role !== 'admin') {
       return { success: false, error: 'Unauthorized - Admin access required' };
     }
 
