@@ -1,0 +1,127 @@
+╔══════════════════════════════════════════════════════════════╗
+║                                                              ║
+║              🎭 DEMO MODE IS NOW ACTIVE! 🎭                  ║
+║                                                              ║
+║  The application is ready to test WITHOUT any setup!        ║
+║                                                              ║
+╚══════════════════════════════════════════════════════════════╝
+
+┌──────────────────────────────────────────────────────────────┐
+│  STEP 1: Start the Application                               │
+├──────────────────────────────────────────────────────────────┤
+│                                                              │
+│  Open terminal in law-firm-web-app folder and run:          │
+│                                                              │
+│  $ npm install                                               │
+│  $ npm run dev                                               │
+│                                                              │
+│  Wait for: "Ready in X seconds"                             │
+│                                                              │
+└──────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────┐
+│  STEP 2: Open Your Browser                                   │
+├──────────────────────────────────────────────────────────────┤
+│                                                              │
+│  Go to: http://localhost:3000                                │
+│                                                              │
+└──────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────┐
+│  STEP 3: Access Login Page                                   │
+├──────────────────────────────────────────────────────────────┤
+│                                                              │
+│  Option A: Scroll to footer → Click "Admin Login" 🔒        │
+│  Option B: Go to http://localhost:3000/admin/login          │
+│                                                              │
+└──────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────┐
+│  STEP 4: Login with Demo Credentials                         │
+├──────────────────────────────────────────────────────────────┤
+│                                                              │
+│  👤 ADMIN ACCOUNT (Full Access)                              │
+│  ├─ Username: admin                                          │
+│  └─ Password: admin123                                       │
+│                                                              │
+│  👤 USER ACCOUNT (Content Only)                              │
+│  ├─ Username: user                                           │
+│  └─ Password: user123                                        │
+│                                                              │
+└──────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────┐
+│  WHAT YOU'LL SEE                                             │
+├──────────────────────────────────────────────────────────────┤
+│                                                              │
+│  ✅ Beautiful login page with dark blue gradient            │
+│  ✅ Admin dashboard with statistics                          │
+│  ✅ Calendar widget (admin only)                             │
+│  ✅ Sidebar navigation                                       │
+│  ✅ Content management pages                                 │
+│  ✅ User management (admin only)                             │
+│  ✅ Settings page (admin only)                               │
+│  ✅ Demo mode banner at top                                  │
+│                                                              │
+└──────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────┐
+│  FEATURES TO TEST                                            │
+├──────────────────────────────────────────────────────────────┤
+│                                                              │
+│  AS ADMIN:                                                   │
+│  • View dashboard statistics                                 │
+│  • Check calendar widget                                     │
+│  • Create/edit news items                                    │
+│  • Create/edit articles                                      │
+│  • Create/edit videos                                        │
+│  • Manage users                                              │
+│  • Update settings                                           │
+│  • Test logout                                               │
+│                                                              │
+│  AS USER:                                                    │
+│  • View dashboard (no calendar)                              │
+│  • Manage content only                                       │
+│  • Verify no access to users/settings                        │
+│                                                              │
+└──────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────┐
+│  IMPORTANT NOTES                                             │
+├──────────────────────────────────────────────────────────────┤
+│                                                              │
+│  ⚠️  Demo mode uses hardcoded credentials                    │
+│  ⚠️  Data is NOT saved (resets on refresh)                   │
+│  ⚠️  Images won't actually upload                            │
+│  ⚠️  Session stored in browser localStorage                  │
+│                                                              │
+│  ✅ Perfect for testing UI/UX                                │
+│  ✅ No database setup required                               │
+│  ✅ No Supabase account needed                               │
+│  ✅ Works offline                                            │
+│                                                              │
+└──────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────┐
+│  NEED HELP?                                                  │
+├──────────────────────────────────────────────────────────────┤
+│                                                              │
+│  📖 START_HERE.md         - Quick start guide                │
+│  📖 DEMO_CREDENTIALS.md   - Login details                    │
+│  📖 ADMIN_USER_GUIDE.md   - How to use dashboard             │
+│  📖 TROUBLESHOOTING.md    - Common issues                    │
+│                                                              │
+│  🐛 Check browser console (F12) for errors                   │
+│  🐛 Check terminal for server errors                         │
+│                                                              │
+└──────────────────────────────────────────────────────────────┘
+
+╔══════════════════════════════════════════════════════════════╗
+║                                                              ║
+║                    🎉 READY TO TEST! 🎉                      ║
+║                                                              ║
+║              Run: npm run dev                                ║
+║              Visit: http://localhost:3000/admin/login        ║
+║              Login: admin / admin123                         ║
+║                                                              ║
+╚══════════════════════════════════════════════════════════════╝
