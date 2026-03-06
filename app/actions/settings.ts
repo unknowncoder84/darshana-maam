@@ -108,7 +108,7 @@ export async function updateSettings(
           email: data.email,
           social_links: data.social_links || {},
           updated_at: new Date().toISOString(),
-        } as Database['public']['Tables']['settings']['Update'])
+        } as any)
         .eq('id', existingSettings.id)
         .select()
         .single<FirmSettings>();
@@ -129,7 +129,7 @@ export async function updateSettings(
           phone: data.phone,
           email: data.email,
           social_links: data.social_links || {},
-        } as Database['public']['Tables']['settings']['Insert'])
+        } as any)
         .select()
         .single<FirmSettings>();
 
