@@ -1,7 +1,7 @@
 'use server';
 
 import { createClient } from '@/lib/supabase/server';
-import { FirmSettings, SocialLinks, Profile } from '@/lib/types/database';
+import { FirmSettings, SocialLinks, Profile, Database } from '@/lib/types/database';
 import { revalidatePath } from 'next/cache';
 
 export interface UpdateSettingsData {
@@ -99,18 +99,16 @@ export async function updateSettings(
 
     if (existingSettings) {
       // Update existing settings
-      const updateData: Partial<FirmSettings> = {
-        firm_name: data.firm_name,
-        address: data.address,
-        phone: data.phone,
-        email: data.email,
-        social_links: data.social_links || {},
-        updated_at: new Date().toISOString(),
-      };
-
       const { data: updatedSettings, error } = await supabase
         .from('settings')
-        .update(updateData)
+        .update({
+          firm_name: data.firm_name,
+          address: data.address,
+          phone: data.phone,
+          email: data.email,
+          social_links: data.social_links || {},
+          updated_at: new Date().toISOString(),
+        } as Database['public']['Tables']['settings']['Update'])
         .eq('id', existingSettings.id)
         .select()
         .single<FirmSettings>();
@@ -123,17 +121,15 @@ export async function updateSettings(
       settings = updatedSettings;
     } else {
       // Create new settings
-      const insertData = {
-        firm_name: data.firm_name,
-        address: data.address,
-        phone: data.phone,
-        email: data.email,
-        social_links: data.social_links || {},
-      };
-
       const { data: newSettings, error } = await supabase
         .from('settings')
-        .insert(insertData)
+        .insert({
+          firm_name: data.firm_name,
+          address: data.address,
+          phone: data.phone,
+          email: data.email,
+          social_links: data.social_links || {},
+        } as Database['public']['Tables']['settings']['Insert'])
         .select()
         .single<FirmSettings>();
 
