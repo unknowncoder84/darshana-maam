@@ -60,7 +60,7 @@ export default function NewsManagementPage() {
 
   const handleSubmit = async (data: NewsFormData) => {
     if (editingNews) {
-      const result = await updateNews({ ...data, id: editingNews.id });
+      const result = await updateNews(editingNews.id, data);
       if (result.success) {
         setShowForm(false);
         setEditingNews(null);

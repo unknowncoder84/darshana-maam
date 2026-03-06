@@ -60,7 +60,7 @@ export default function ArticlesManagementPage() {
 
   const handleSubmit = async (data: ArticleFormData) => {
     if (editingArticle) {
-      const result = await updateArticle({ ...data, id: editingArticle.id });
+      const result = await updateArticle(editingArticle.id, data);
       if (result.success) {
         setShowForm(false);
         setEditingArticle(null);

@@ -61,7 +61,7 @@ export default function VideosManagementPage() {
 
   const handleSubmit = async (data: VideoFormData) => {
     if (editingVideo) {
-      const result = await updateVideo({ ...data, id: editingVideo.id });
+      const result = await updateVideo(editingVideo.id, data);
       if (result.success) {
         setShowForm(false);
         setEditingVideo(null);

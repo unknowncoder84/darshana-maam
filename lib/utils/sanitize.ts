@@ -3,7 +3,8 @@ import { JSDOM } from 'jsdom';
 
 // Create a DOMPurify instance for server-side use
 const window = new JSDOM('').window;
-const purify = DOMPurify(window as unknown as Window);
+// @ts-ignore - Type mismatch between jsdom Window and DOMPurify WindowLike
+const purify = DOMPurify(window);
 
 /**
  * Sanitizes HTML content to prevent XSS attacks

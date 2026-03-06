@@ -101,6 +101,7 @@ export async function updateSettings(
       // Update existing settings
       const { data: updatedSettings, error } = await supabase
         .from('settings')
+        // @ts-ignore - Bypass Supabase type inference issue
         .update({
           firm_name: data.firm_name,
           address: data.address,
@@ -108,10 +109,11 @@ export async function updateSettings(
           email: data.email,
           social_links: data.social_links || {},
           updated_at: new Date().toISOString(),
-        } as any)
+        })
+        // @ts-ignore
         .eq('id', existingSettings.id)
         .select()
-        .single<FirmSettings>();
+        .single();
 
       if (error) {
         console.error('Error updating settings:', error);
@@ -123,15 +125,16 @@ export async function updateSettings(
       // Create new settings
       const { data: newSettings, error } = await supabase
         .from('settings')
+        // @ts-ignore - Bypass Supabase type inference issue
         .insert({
           firm_name: data.firm_name,
           address: data.address,
           phone: data.phone,
           email: data.email,
           social_links: data.social_links || {},
-        } as any)
+        })
         .select()
-        .single<FirmSettings>();
+        .single();
 
       if (error) {
         console.error('Error creating settings:', error);
