@@ -86,29 +86,19 @@ export default function ArticlesPage() {
 
   return (
     <PublicLayout settings={firmSettings}>
-      {/* Hero Section */}
-      <section className="relative bg-gray-900">
-        <div className="relative h-[300px] overflow-hidden">
-          <div className="absolute inset-0">
-            <img
-              src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1920&q=80"
-              alt="Legal consultation"
-              className="w-full h-full object-cover opacity-40"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-800/80"></div>
-          </div>
-          <div className="relative container mx-auto px-4 h-full flex items-center">
-            <AnimatedSection animation="fade">
-              <div className="max-w-4xl text-white">
-                <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                  Articles
-                </h1>
-                <p className="text-xl text-blue-100">
-                  Expert legal insights and analysis on criminal and administrative law
-                </p>
-              </div>
-            </AnimatedSection>
-          </div>
+      {/* Hero Section - Clean Design Without Overlay */}
+      <section className="bg-gradient-to-br from-blue-50 via-white to-blue-50 border-b border-gray-200">
+        <div className="container mx-auto px-4 py-16">
+          <AnimatedSection animation="fade">
+            <div className="max-w-4xl mx-auto text-center">
+              <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+                Legal Articles & Insights
+              </h1>
+              <p className="text-xl text-gray-600">
+                Expert analysis on criminal and administrative law matters
+              </p>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 

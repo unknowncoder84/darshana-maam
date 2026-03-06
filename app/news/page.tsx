@@ -57,44 +57,24 @@ export default function NewsPage() {
 
   return (
     <PublicLayout settings={firmSettings}>
-      {/* Hero Section with Blue Gradient */}
-      <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-950 text-white py-20 md:py-32 overflow-hidden">
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500 rounded-full blur-3xl animate-float"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-500 rounded-full blur-3xl animate-float-delayed"></div>
-        </div>
-        
-        <div className="container mx-auto px-4 relative z-10">
+      {/* Hero Section - Clean Design Without Overlay */}
+      <section className="bg-gradient-to-br from-blue-50 via-white to-blue-50 border-b border-gray-200">
+        <div className="container mx-auto px-4 py-16">
           <AnimatedSection animation="fade">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="inline-block mb-6 px-6 py-2 bg-blue-500/20 backdrop-blur-sm rounded-full border border-blue-400/30">
-                <span className="text-blue-300 font-semibold">Latest Updates</span>
-              </div>
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">
-                News & Updates
+              <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+                Latest News & Updates
               </h1>
-              <p className="text-xl text-blue-100 leading-relaxed">
-                Stay informed with the latest news, insights, and developments from Settle Here Law Associates
+              <p className="text-xl text-gray-600">
+                Stay informed about recent legal developments and firm updates
               </p>
             </div>
           </AnimatedSection>
         </div>
       </section>
 
-      {/* News Grid with Black Texture Background */}
-      <section className="relative py-20 md:py-32 bg-gradient-to-br from-[#0a0a0a] via-[#1a1a2e] to-[#0a0a0a]">
-        {/* Subtle Grid Pattern */}
-        <div className="absolute inset-0 opacity-5" style={{
-          backgroundImage: 'linear-gradient(rgba(59, 130, 246, 0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 130, 246, 0.5) 1px, transparent 1px)',
-          backgroundSize: '50px 50px'
-        }}></div>
-        
-        {/* Floating Orbs */}
-        <div className="absolute top-40 right-20 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl animate-pulse-slow"></div>
-        <div className="absolute bottom-40 left-20 w-80 h-80 bg-cyan-600/10 rounded-full blur-3xl animate-pulse-slow"></div>
-        
-        <div className="container mx-auto px-4 relative z-10">
+      {/* News Grid */}
+      <section className="py-16 bg-white">
           {loading ? (
             <div className="text-center py-16">
               <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
