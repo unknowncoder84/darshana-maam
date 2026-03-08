@@ -1,33 +1,38 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from "@/lib/contexts/AuthContext";
 import { ToastProvider } from "@/lib/contexts/ToastContext";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// Premium Editorial Fonts
+const playfairDisplay = Playfair_Display({
+  variable: "--font-serif",
   subsets: ["latin"],
+  weight: ["400", "700"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
+  variable: "--font-sans",
   subsets: ["latin"],
+  weight: ["300", "400", "600", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   title: {
-    default: "Law Firm - Professional Legal Services",
-    template: "%s | Law Firm"
+    default: "Settle Here Law Associates - Expert Criminal & Administrative Law",
+    template: "%s | Settle Here Law Associates"
   },
-  description: "Expert legal services and counsel for your needs. Professional attorneys providing comprehensive legal representation across multiple practice areas.",
-  keywords: ['law firm', 'legal services', 'attorney', 'lawyer', 'legal counsel'],
-  authors: [{ name: 'Law Firm' }],
+  description: "Premier legal defense in criminal and administrative law across India. Specialized in cyber crimes, drug crimes, financial crimes, deportation, and criminal trials. Expert representation when you need it most.",
+  keywords: ['criminal law', 'administrative law', 'cyber crimes', 'drug crimes', 'financial crimes', 'deportation', 'bail', 'legal defense', 'India', 'law firm'],
+  authors: [{ name: 'Settle Here Law Associates' }],
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    siteName: 'Law Firm',
-    title: 'Law Firm - Professional Legal Services',
-    description: 'Expert legal services and counsel for your needs',
+    siteName: 'Settle Here Law Associates',
+    title: 'Settle Here Law Associates - Expert Legal Defense',
+    description: 'Premier legal defense in criminal and administrative law across India',
   },
   robots: {
     index: true,
@@ -41,10 +46,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="en" className={`${playfairDisplay.variable} ${inter.variable}`}>
+      <body className="antialiased font-sans">
         <AuthProvider>
           <ToastProvider>
             {children}
