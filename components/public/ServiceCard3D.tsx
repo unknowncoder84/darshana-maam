@@ -64,24 +64,24 @@ export default function ServiceCard3D({
       onMouseLeave={handleMouseLeave}
     >
       {/* Icon */}
-      <div className="w-16 h-16 bg-gradient-to-br from-[#0A192F] to-[#1a3a52] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+      <div className="w-16 h-16 gradient-primary rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
         {icon}
       </div>
 
       {/* Title */}
-      <h3 className="font-serif text-2xl font-bold mb-4 text-[#0A192F] group-hover:text-[#C9A961] transition-colors duration-300">
+      <h3 className="font-serif text-2xl font-bold mb-4 text-[#1E40AF] group-hover:gradient-text transition-all duration-300">
         {title}
       </h3>
 
       {/* Description */}
-      <p className="font-sans text-[#4A5568] leading-relaxed mb-6">
+      <p className="font-sans text-[#475569] leading-relaxed mb-6">
         {description}
       </p>
 
       {/* Learn More Link */}
       <Link
         href={link}
-        className="inline-flex items-center text-[#0A192F] hover:text-[#C9A961] font-semibold transition-colors duration-300 group/link"
+        className="inline-flex items-center text-[#1E40AF] hover:text-[#3B82F6] font-semibold transition-colors duration-300 group/link"
       >
         Learn More
         <svg
@@ -99,8 +99,8 @@ export default function ServiceCard3D({
         </svg>
       </Link>
 
-      {/* Subtle border on hover */}
-      <div className="absolute inset-0 rounded-xl border-2 border-transparent group-hover:border-[#C9A961] transition-colors duration-300 pointer-events-none" />
+      {/* Gradient border on hover */}
+      <div className="absolute inset-0 rounded-xl border-2 border-transparent group-hover:border-[#3B82F6] transition-colors duration-300 pointer-events-none" />
     </div>
   );
 }

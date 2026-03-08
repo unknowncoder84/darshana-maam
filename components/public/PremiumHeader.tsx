@@ -42,13 +42,13 @@ export default function PremiumHeader() {
       <div className={`transition-all duration-300 ${
         isScrolled ? 'h-0 opacity-0 overflow-hidden' : 'h-auto opacity-100'
       }`}>
-        <div className="bg-[#0A192F] text-white">
+        <div className="bg-[#1E40AF] text-white">
           <div className="container-editorial">
             <div className="flex justify-between items-center py-2.5 text-sm">
               <div className="flex items-center space-x-6">
                 <a
                   href="tel:+918055666660"
-                  className="flex items-center hover:text-[#C9A961] transition-colors font-medium"
+                  className="flex items-center hover:text-[#60A5FA] transition-colors font-medium"
                 >
                   <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -61,7 +61,7 @@ export default function PremiumHeader() {
               <div className="flex items-center space-x-4">
                 <Link
                   href="/admin/login"
-                  className="flex items-center hover:text-[#C9A961] transition-colors font-medium"
+                  className="flex items-center hover:text-[#60A5FA] transition-colors font-medium"
                 >
                   <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
@@ -81,12 +81,12 @@ export default function PremiumHeader() {
           <Link href="/" className="group">
             <div className="text-left">
               <div className={`font-serif text-2xl md:text-3xl font-bold transition-colors duration-300 ${
-                isScrolled ? 'text-[#0A192F]' : 'text-white'
-              } group-hover:text-[#C9A961]`}>
+                isScrolled ? 'text-[#1E40AF]' : 'text-white'
+              } group-hover:text-[#60A5FA]`}>
                 Settle Here
               </div>
               <div className={`text-xs md:text-sm font-sans font-medium mt-0.5 tracking-wide transition-colors duration-300 ${
-                isScrolled ? 'text-[#4A5568]' : 'text-white/80'
+                isScrolled ? 'text-[#475569]' : 'text-white/80'
               }`}>
                 Law Associates
               </div>
@@ -102,10 +102,10 @@ export default function PremiumHeader() {
                     href={link.href}
                     className={`px-4 py-2 text-sm font-semibold transition-all duration-300 rounded-md ${
                       isActive(link.href)
-                        ? 'bg-[#0A192F] text-white shadow-md'
+                        ? 'bg-[#1E40AF] text-white shadow-md'
                         : isScrolled
-                        ? 'text-[#0A192F] hover:bg-[#0A192F]/5 hover:text-[#C9A961]'
-                        : 'text-white hover:bg-white/10 hover:text-[#C9A961]'
+                        ? 'text-[#1E40AF] hover:bg-[#1E40AF]/5 hover:text-[#60A5FA]'
+                        : 'text-white hover:bg-white/10 hover:text-[#60A5FA]'
                     }`}
                   >
                     {link.label}
@@ -119,7 +119,7 @@ export default function PremiumHeader() {
           <button
             className={`lg:hidden p-2 rounded-lg transition-colors ${
               isScrolled
-                ? 'hover:bg-[#0A192F]/5 text-[#0A192F]'
+                ? 'hover:bg-[#1E40AF]/5 text-[#1E40AF]'
                 : 'hover:bg-white/10 text-white'
             }`}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -146,7 +146,7 @@ export default function PremiumHeader() {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <div className="lg:hidden pb-4 border-t border-[#0A192F]/10 pt-4">
+          <div className="lg:hidden pb-4 border-t border-[#1E40AF]/10 pt-4">
             <ul className="space-y-2">
               {navLinks.map((link) => (
                 <li key={link.href}>
@@ -154,8 +154,8 @@ export default function PremiumHeader() {
                     href={link.href}
                     className={`block py-2 px-4 rounded-md transition-colors ${
                       isActive(link.href)
-                        ? 'bg-[#0A192F] text-white font-semibold'
-                        : 'text-[#0A192F] hover:bg-[#0A192F]/5'
+                        ? 'bg-[#1E40AF] text-white font-semibold'
+                        : 'text-[#1E40AF] hover:bg-[#1E40AF]/5'
                     }`}
                     onClick={() => setMobileMenuOpen(false)}
                   >

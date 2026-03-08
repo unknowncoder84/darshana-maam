@@ -64,7 +64,7 @@ export default function HeroSlider() {
   };
 
   return (
-    <section className="relative h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden bg-[#0A192F]">
+    <section className="relative h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden bg-[#1E40AF]">
       <AnimatePresence mode="wait">
         <motion.div
           key={currentSlide}
@@ -83,7 +83,7 @@ export default function HeroSlider() {
           />
 
           {/* Editorial Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0A192F]/80 via-[#0A192F]/50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#1E40AF]/85 via-[#1E40AF]/60 to-transparent" />
 
           {/* Content */}
           <div className="relative z-10 container-editorial h-full flex items-center">
@@ -98,7 +98,7 @@ export default function HeroSlider() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="font-sans text-[#C9A961] text-sm md:text-base uppercase tracking-wider mb-4 font-semibold"
+                className="font-sans text-[#60A5FA] text-sm md:text-base uppercase tracking-wider mb-4 font-semibold"
               >
                 Settle Here Law Associates
               </motion.p>
@@ -132,7 +132,7 @@ export default function HeroSlider() {
               >
                 <Link
                   href={slides[currentSlide].cta1Link}
-                  className="inline-flex items-center justify-center bg-white text-[#0A192F] px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:bg-[#C9A961] hover:text-white shadow-xl hover:shadow-2xl hover:scale-105"
+                  className="inline-flex items-center justify-center bg-white text-[#1E40AF] px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:bg-[#60A5FA] hover:text-white shadow-xl hover:shadow-2xl hover:scale-105"
                 >
                   {slides[currentSlide].cta1Text}
                   <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -141,7 +141,7 @@ export default function HeroSlider() {
                 </Link>
                 <Link
                   href={slides[currentSlide].cta2Link}
-                  className="inline-flex items-center justify-center bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:bg-white hover:text-[#0A192F] shadow-xl hover:shadow-2xl hover:scale-105"
+                  className="inline-flex items-center justify-center bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:bg-white hover:text-[#1E40AF] shadow-xl hover:shadow-2xl hover:scale-105"
                 >
                   {slides[currentSlide].cta2Text}
                 </Link>
@@ -159,7 +159,7 @@ export default function HeroSlider() {
             onClick={() => goToSlide(index)}
             className={`w-3 h-3 rounded-full transition-all duration-300 ${
               index === currentSlide
-                ? 'bg-[#C9A961] w-8'
+                ? 'bg-[#60A5FA] w-8'
                 : 'bg-white/50 hover:bg-white/80'
             }`}
             aria-label={`Go to slide ${index + 1}`}
